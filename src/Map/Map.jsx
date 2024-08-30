@@ -57,7 +57,7 @@ export function Map({ stops }) {
     </ReactMapGL>
   );
 }
-
+// i
 Map.propTypes = {
   stops: PropTypes.arrayOf(
     PropTypes.shape({
