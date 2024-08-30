@@ -6,7 +6,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import "./Map.css";
 
 const TOKEN_MAPBOX =
-  "pk.eyJlIjoidGhpYWdvc29cmFsIiwiY5I6TF331jB6yX122255bjk1Y2o1fQ.CvNetOTQhag4--2DUS8_Pg";
+  "pk.eyJ1IjoidGhpYWdvc29icmFsIiwiYSI6ImNseTF3Y3Y1djB6MW8yaXI2Z255bjk1Y2oifQ.CvNetOTQhag4--2DUS8_Pg";
 
 export function Map({ stops }) {
   const [selectedStop, setSelectedStop] = useState(null);
@@ -26,7 +26,7 @@ export function Map({ stops }) {
   return (
     <ReactMapGL
       {...viewport}
-      mapboxApiAccessToken={TOKEN_MAPBOX}
+      mapboxAccessToken={TOKEN_MAPBOX}
       onViewportChange={(nextViewport) => setViewport(nextViewport)}
       mapStyle="mapbox://styles/mapbox/streets-v11"
     >
