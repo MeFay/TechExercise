@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+.marker img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
