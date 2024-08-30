@@ -1,12 +1,11 @@
 import PropTypes from "prop-types";
-import Marker from "../icons/marker.png";
 
 export function StopMarker({ stop, onClick }) {
-  return (
-    <div className="marker" onClick={() => onClick(stop)}>
-      <img src={Marker} alt="Paragem" style={{ width: "24px", height: "24px" }} />
-    </div>
-  );
+  const handleClick = () => {
+    onClick(stop);
+  };
+
+  return <div className="marker" onClick={handleClick}></div>;
 }
 
 StopMarker.propTypes = {

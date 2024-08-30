@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { StopArrivals } from "../Stop/StopArrivals";
-import ReactMapGL, { Marker, Popup } from "react-map-gl";
+import ReactMapGL, { Marker } from "react-map-gl";
 import PropTypes from "prop-types";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./Map.css";
@@ -11,10 +11,16 @@ const MAPBOX_TOKEN =
 
 export function Map({ stops }) {
   const [selectedStop, setSelectedStop] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const handleMarker = useCallback((stop) => {
     setSelectedStop(stop);
+    setShowModal(true);
   }, []);
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
 
   const [viewport, setViewport] = useState({
     latitude: 41.1579,
@@ -45,21 +51,15 @@ export function Map({ stops }) {
             <StopMarker stop={stop} onClick={handleMarker} />
           </Marker>
         ))}
-
-        {selectedStop && (
-          <Popup
-            latitude={selectedStop.latitude}
-            longitude={selectedStop.longitude}
-            onClose={() => setSelectedStop(null)}
-            className="popup-content"
-          >
-            <div>
-              <h3>{selectedStop.name}</h3>
-              <StopArrivals stopCode={selectedStop.code} />
-            </div>
-          </Popup>
-        )}
       </ReactMapGL>
+
+      {showModal && selectedStop && (
+        <StopArrivals
+          stopCode={selectedStop.code}
+          showModal={showModal}
+          handleClose={handleClose}
+        />
+      )}
     </div>
   );
 }

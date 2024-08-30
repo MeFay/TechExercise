@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Map } from "./Map/Map";
 import "mapbox-gl/dist/mapbox-gl.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import axios from "axios";
 
@@ -22,7 +23,6 @@ export function App() {
 
   return (
     <div className="App">
-      <h1>Paragens de Autocarro</h1>
       <Map stops={stops} />
     </div>
   );

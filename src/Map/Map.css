@@ -1,38 +1,59 @@
-body,
-html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#root {
-  width: 100%;
-  height: 100%;
-}
-
 .map-container {
   width: 100%;
   height: 100vh;
-  border: 1px solid red;
+  position: relative;
+  border: none;
 }
 
-.marker img {
-  width: 24px;
-  height: 24px;
+.mapboxgl-canvas {
+  border: none;
+}
+
+.marker {
+  width: 8px;
+  height: 8px;
+  background-color: rgb(51, 187, 192);
+  border-radius: 50%;
   cursor: pointer;
 }
 
 .popup-content {
-  padding: 10px;
-  background-color: red;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .popup-content h3 {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
 }
 
-.mapboxgl-canvas {
-  border: 1px solid blue;
+.mapboxgl-popup {
+  z-index: 1100;
+}
+
+.modal-backdrop {
+  z-index: 1040;
+}
+
+.modal {
+  z-index: 1050;
+}
+
+.modal-content {
+  border-radius: 8px;
+  border: none;
+  position: relative;
+}
+
+.modal-header .close {
+  font-size: 1.5rem;
+  color: #000;
+  opacity: 0.5;
+}
+
+.modal-header .close:hover {
+  opacity: 1;
 }
