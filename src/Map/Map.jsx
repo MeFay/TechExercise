@@ -37,7 +37,7 @@ export function Map({ stops }) {
           longitude={stop.longitude}
         >
           <div onClick={() => handleMarker(stop)}>
-            <img src="marker-icon.png" alt="Bus Stop" />
+            <img src="marker-icon.png" alt="Paragem autocarro" />
           </div>
         </Marker>
       ))}
@@ -57,7 +57,7 @@ export function Map({ stops }) {
     </ReactMapGL>
   );
 }
-// i
+
 Map.propTypes = {
   stops: PropTypes.arrayOf(
     PropTypes.shape({

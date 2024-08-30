@@ -11,7 +11,7 @@ export function StopArrivals({ stopCode }) {
         const response = await axios.get(`/api/arrivals/${stopCode}`);
         setArrivals(response.data);
       } catch (error) {
-        console.error("Erro ao aceder aos horários de passagens:", error);
+        console.error("Erro ao aceder aos horários de paragens:", error);
       }
     };
 
